@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fbe400">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:contentDescription="TODO"
+        android:src="@drawable/kakaologo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_SigninEmail"
+        android:layout_width="230dp"
+        android:layout_height="48dp"
+        android:layout_centerInParent="true"
+        android:width="210dp"
+        android:background="@drawable/white"
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:hint="카카오계정"
+        android:includeFontPadding="true"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:paddingLeft="10dp"
+        android:textColor="#C5BEBE"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <EditText
+        android:id="@+id/et_SigninPw"
+        android:layout_width="230dp"
+        android:layout_height="48dp"
+        android:paddingLeft="10dp"
+        android:layout_centerHorizontal="true"
+        android:width="210dp"
+        android:background="@drawable/white"
+        android:ems="10"
+        android:hint="비밀번호"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor="#C5BEBE"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/et_SigninEmail"
+        app:layout_constraintStart_toStartOf="@+id/et_SigninEmail"
+        app:layout_constraintTop_toBottomOf="@+id/et_SigninEmail" />
+
+    <Button
+        android:id="@+id/btn_Signin"
+        android:layout_width="230dp"
+        android:layout_height="48dp"
+        android:layout_alignStart="@+id/et_SigninPw"
+        android:layout_alignEnd="@+id/et_SigninPw"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#271111"
+        android:text="로그인"
+        android:textColor="#C5BEBE"
+        app:layout_constraintEnd_toEndOf="@+id/et_SigninPw"
+        app:layout_constraintStart_toStartOf="@+id/et_SigninPw"
+        app:layout_constraintTop_toBottomOf="@+id/et_SigninPw"
+        tools:text="로그인" />
+
+    <Button
+        android:id="@+id/btn_ToSignup"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00FFFFFF"
+        android:foregroundTint="#00FFFFFF"
+        android:shadowColor="#00FFFFFF"
+        android:text="회원가입"
+        android:textColor="#271111"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_Signin"
+        app:layout_constraintStart_toStartOf="@+id/btn_Signin"
+        app:layout_constraintTop_toBottomOf="@+id/btn_Signin" />
+</androidx.constraintlayout.widget.ConstraintLayout>

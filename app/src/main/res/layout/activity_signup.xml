@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9E000"
+    tools:context=".SignUpActivity"
+    >
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/kakaologo2"
+        app:layout_constraintStart_toStartOf="@+id/btn_Signup"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_SignupEmail"
+        android:layout_width="230dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/white"
+        android:ems="10"
+        android:hint="이메일"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:paddingLeft="10dp"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_Signup"
+        app:layout_constraintStart_toStartOf="@+id/btn_Signup"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/et_SignupPw"
+        android:layout_width="230dp"
+        android:layout_height="48dp"
+        android:background="@drawable/white"
+        android:ems="10"
+        android:hint="비밀번호 6자리 이상"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:paddingLeft="10dp"
+        android:textColor="#271111"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/et_SignupEmail"
+        app:layout_constraintStart_toStartOf="@+id/et_SignupEmail"
+        app:layout_constraintTop_toBottomOf="@+id/et_SignupEmail" />
+
+    <Button
+        android:id="@+id/btn_Signup"
+
+
+        android:layout_width="230dp"
+
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="100dp"
+        android:background="#271111"
+        android:text="회원가입"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_PwCheck" />
+
+    <EditText
+        android:id="@+id/et_PwCheck"
+        android:layout_width="230dp"
+        android:layout_height="48dp"
+        android:background="@drawable/white"
+        android:ems="10"
+        android:hint="비밀번호 확인"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:paddingLeft="10dp"
+        android:textColor="#271111"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/et_SignupPw"
+        app:layout_constraintStart_toStartOf="@+id/et_SignupPw"
+        app:layout_constraintTop_toBottomOf="@+id/et_SignupPw"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
