@@ -1,12 +1,15 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+
 buildscript {
     repositories {
+
         google()
         mavenCentral()
         maven {
             url 'https://naver.jfrog.io/artifactory/maven/'
             //url 'https://navercorp.bintray.com/maps'
         }
+        flatDir { dirs 'libs' }
     }
     dependencies {
         classpath "com.android.tools.build:gradle:7.0.0"
@@ -17,6 +20,16 @@ buildscript {
         // in the individual module build.gradle files
     }
 }
+
+/*allprojects {
+    repositories {
+        google()
+
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}*/
 
 task clean(type: Delete) {
     delete rootProject.buildDir

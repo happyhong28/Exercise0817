@@ -47,18 +47,20 @@ dependencies {
 
     implementation platform('com.google.firebase:firebase-bom:28.3.1')
     implementation 'com.google.firebase:firebase-analytics'
-    //implementation 'com.naver.maps:map-sdk:3.12.0'
-
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
     implementation 'com.google.android.gms:play-services-location:17.0.0'
-
     implementation 'org.jsoup:jsoup:1.11.3'
 
+    implementation files('libs/app-release.aar')
 
+//    implementation name: 'app-release', ext: 'aar'
+    //compile(name:'app-release', ext:'aar')
 
 //    implementation 'com.android.support:appcompat-v7:27.0.0'
 //
 //    implementation('com.naver.maps:map-sdk:3.12.0') {
 //        exclude group: 'com.android.support'
 //    }
+
+
 }

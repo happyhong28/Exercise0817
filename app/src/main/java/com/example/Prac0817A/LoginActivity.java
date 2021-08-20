@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.example.librarytest.LibraryTest;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -25,7 +26,6 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
     private FirebaseAuth mAuth;
     private String getuser;
-
 
     private static final String TAG = MainActivity.class.toString();
 
@@ -46,8 +46,10 @@ public class LoginActivity extends AppCompatActivity {
         settings.setJavaScriptEnabled(true);
         webView.setWebViewClient(new CustomWebViewClient());                //url catch 등(현재로선 크게 필요한 내용이 아님)
         webView.setWebContentsDebuggingEnabled(true);                       //크롬 인스펙트 활성화
-        webView.loadUrl(startPage);                                         //웹뷰에 페이지 로드
+        webView.loadUrl(startPage);//웹뷰에 페이지 로드
 
+        LibraryTest libraryTest = new LibraryTest();
+        libraryTest.showToast(LoginActivity.this);
     }
 
     /**
