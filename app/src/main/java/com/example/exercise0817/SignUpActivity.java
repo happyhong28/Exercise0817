@@ -22,12 +22,7 @@ import java.util.Objects;
 
 public class SignUpActivity extends AppCompatActivity {
 
-//    private FirebaseDatabase database;
-//    private DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
-    private FirebaseAuth.AuthStateListener firebaseAuthListener;
-    private FirebaseAuth Auth; //파이어ㅔㅂ이스에 대한 권한 가져오기
-
     private EditText et_signupemail;
     private EditText et_signuppw;
     private EditText et_pw_check;
@@ -59,15 +54,12 @@ public class SignUpActivity extends AppCompatActivity {
                     Toast.makeText(SignUpActivity.this, "계정과 비밀번호를 입력하세요.", Toast.LENGTH_LONG).show();
                 }
             }
-        }); //
-
+        });//
 
     }
-
     private void createUser(String email, String password) {
 
         firebaseAuth = FirebaseAuth.getInstance();
-
         firebaseAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override

@@ -3,10 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/mcnc/AndroidStudioProjects/Exercise0817/app/src/main/res/layout/activity_main.xml" value="0.16893115942028986" />
+        <entry key="..\:/Users/mcnc/AndroidStudioProjects/Exercise0817/app/src/main/res/layout/activity_detail.xml" value="0.2" />
+        <entry key="..\:/Users/mcnc/AndroidStudioProjects/Exercise0817/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/mcnc/AndroidStudioProjects/Exercise0817/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/mcnc/AndroidStudioProjects/Exercise0817/app/src/main/res/layout/activity_map.xml" value="0.1" />
         <entry key="..\:/Users/mcnc/AndroidStudioProjects/Exercise0817/app/src/main/res/layout/activity_maps.xml" value="0.1265625" />
-        <entry key="..\:/Users/mcnc/AndroidStudioProjects/Exercise0817/app/src/main/res/layout/activity_signup.xml" value="0.16893115942028986" />
+        <entry key="..\:/Users/mcnc/AndroidStudioProjects/Exercise0817/app/src/main/res/layout/activity_signup.xml" value="0.4" />
         <entry key="..\:/Users/mcnc/AndroidStudioProjects/Exercise0817/app/src/main/res/layout/fragment_map.xml" value="0.1" />
       </map>
     </option>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+    <defs>
+        <style>
+            .cls-2{fill:none;stroke:#5d89b3;stroke-linecap:square;stroke-miterlimit:10;stroke-width:2px}
+        </style>
+    </defs>
+    <g id="추가버튼" transform="translate(-249.5 -98.5)">
+        <path id="패스_1139" d="M4.212 4.212L-3-3" class="cls-2" transform="rotate(45 -.61 368.088)"/>
+        <path id="패스_3276" d="M4.212 4.212L-3-3" class="cls-2" transform="rotate(135 107.883 108.596)"/>
+    </g>
+</svg>

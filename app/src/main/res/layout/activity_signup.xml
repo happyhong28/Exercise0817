@@ -4,16 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F9E000"
-    tools:context=".SignUpActivity"
-    >
+    android:background="#FFFFFF"
+    tools:context=".SignUpActivity">
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="100dp"
-        android:layout_height="30dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginTop="100dp"
-        android:src="@drawable/kakaologo2"
+        android:src="@drawable/eightball"
         app:layout_constraintStart_toStartOf="@+id/btn_Signup"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -52,18 +51,16 @@
 
     <Button
         android:id="@+id/btn_Signup"
-
-
         android:layout_width="230dp"
-
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="100dp"
-        android:background="#271111"
-        android:text="회원가입"
-        android:textAllCaps="true"
-        android:textColor="#FFFFFF"
+        android:background="#000000"
+        android:backgroundTint="#000000"
+        android:shadowColor="#000000"
+        android:text="@string/btn_signup"
+        android:textAllCaps="false"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

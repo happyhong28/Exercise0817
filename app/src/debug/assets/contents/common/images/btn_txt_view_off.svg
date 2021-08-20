@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="인풋_안보이기_버튼_" data-name="인풋 안보이기 버튼 " transform="translate(-295 -333)">
+    <rect id="사각형_1862" data-name="사각형 1862" width="24" height="24" transform="translate(319 357) rotate(180)" fill="none" opacity="0.2"/>
+    <g id="눈">
+      <path id="패스_3248" data-name="패스 3248" d="M300.088,344.753s5.795-8.847,13.88,0c0,0-3.129,4.4-6.927,4.4S300.088,344.753,300.088,344.753Z" fill="none" stroke="#4b5055" stroke-width="1"/>
+      <g id="타원_703" data-name="타원 703" transform="translate(304 342)" fill="#fff" stroke="#4b5055" stroke-width="1">
+        <circle cx="3" cy="3" r="3" stroke="none"/>
+        <circle cx="3" cy="3" r="2.5" fill="none"/>
+      </g>
+    </g>
+    <g id="_" data-name="/" transform="translate(313.314 339.414) rotate(135)" fill="#4b5055" stroke="#fff" stroke-width="1">
+      <rect width="16" height="1" rx="0.5" stroke="none"/>
+      <rect x="-0.5" y="-0.5" width="17" height="2" rx="1" fill="none"/>
+    </g>
+  </g>
+</svg>

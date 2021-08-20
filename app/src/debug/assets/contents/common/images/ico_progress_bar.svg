@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="90" height="10" viewBox="0 0 90 10">
+  <g id="그룹_1" data-name="그룹 1" transform="translate(-544 -501)">
+    <circle id="타원_1" data-name="타원 1" cx="5" cy="5" r="5" transform="translate(544 501)" fill="#5d89b3" fill-opacity="1">
+        <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0" begin="-0.8s"></animate>
+    </circle>
+    <circle id="타원_2" data-name="타원 2" cx="5" cy="5" r="5" transform="translate(564 501)" fill="#5d89b3" fill-opacity="0.8">
+        <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0" begin="-0.6s"></animate>
+    </circle>
+    <circle id="타원_3" data-name="타원 3" cx="5" cy="5" r="5" transform="translate(584 501)" fill="#5d89b3" fill-opacity="0.6">
+        <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0" begin="-0.4s"></animate>
+    </circle>
+    <circle id="타원_4" data-name="타원 4" cx="5" cy="5" r="5" transform="translate(604 501)" fill="#5d89b3" fill-opacity="0.4">
+        <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0" begin="-0.2s"></animate>
+    </circle>
+    <circle id="타원_5" data-name="타원 5" cx="5" cy="5" r="5" transform="translate(624 501)" fill="#5d89b3" fill-opacity="0.2">
+        <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0" begin="0s"></animate>
+    </circle>
+  </g>
+</svg>

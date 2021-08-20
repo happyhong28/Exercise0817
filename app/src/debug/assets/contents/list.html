@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Cache-Control" content="no-cache"/>
+	<meta http-equiv="Pragma" content="no-cache"/>
+	<meta http-equiv="Expires" content="-1">
+	<meta name="format-detection" content="telephone=no" />
+	<script type="text/javascript" src="common/js/jquery-2.1.4.min.js"></script> 
+	<link type="text/css" rel="stylesheet" href="common/css/common.css" />
+	<title>HDC 아이콘트롤스 Mobile Application</title>
+	
+	<script type="text/javascript">
+	$(function() {
+		var num = $(".num");
+		
+		$(".num").each(function(index, item){
+			this.innerHTML=index + 1;
+		})
+	});
+	</script>
+	
+	<style>
+		.wrapper {padding:10px 5px; color: #231815;}
+		h1 {margin-bottom:20px; text-align:center;}
+		h2 {margin:10px; font-size:20px; color:#022257;}
+		a {color:#1376c6;}
+		
+		table {width:100%; background:#fff; border:1px solid #ccc;}
+		table thead th {height:30px; color:#474e55; border:1px solid #ccc; background:#dee4e9;}
+		table td {padding:5px !important; border:1px solid #ccc;}
+		table .title td {padding:10px 30px; font-size:20px; color:#022257; background:#f5f6fa;}
+		.date {text-align:center;}
+		.date + .date {color:#f00049;}
+		.line td {padding:1px !important; background:#eee;}
+		td:last-child {font-size:0.9em;}
+		tbody tr:hover {background:#f7f9fb;}
+		
+		.num {display:inline-block; min-width:14px; height:20px; margin-right:3px; padding:0 2px; font-size:.75rem; color:#3ab1fc; text-align:center; vertical-align:middle; line-height:20px; letter-spacing:-1px; background:#f0f0f0; border-radius:2px;}
+		
+	</style>
+</head>
+<body>
+<div class="wrapper">
+
+	<h1>HDC 아이콘트롤스 Mobile Application - 2021년</h1>
+	
+	<table>
+		<colgroup>
+			<col style="width:7%;" />
+			<col style="width:9%;" span="2" />
+			<col style="width:10%;" />
+			<col style="width:12%;" />
+			<col style="width:15%;" />
+			<col style="width:7%;" span="2" />
+			<col />
+		</colgroup>
+		<thead>
+		<tr>
+			<th scope="col">Folder</th>
+			<th scope="col">1 Depth</th>
+			<th scope="col">2 Depth</th>
+			<th scope="col">3 Depth</th>
+			<th scope="col">4 Depth</th>
+			<th scope="col">File name</th>
+			<th scope="col">Date1</th>
+			<th scope="col">Date2</th>
+			<th scope="col">memo</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td><em class="num"></em>LOG</td>
+			<td>로그인</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td><a href="LOG/html/LOG0100.html" target="_blank">LOG0100.html</a></td>
+			<td class="date">03-11</td>
+			<td class="date"></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><em class="num"></em></td>
+			<td></td>
+			<td>회원가입</td>
+			<td></td>
+			<td></td>
+			<td><a href="LOG/html/LOG0200.html" target="_blank">LOG0200.html</a></td>
+			<td class="date">03-11</td>
+			<td class="date"></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><em class="num"></em></td>
+			<td></td>
+			<td></td>
+			<td>회원가입 완료</td>
+			<td></td>
+			<td><a href="LOG/html/LOG0210.html" target="_blank">LOG0210.html</a></td>
+			<td class="date">03-12</td>
+			<td class="date"></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><em class="num"></em></td>
+			<td></td>
+			<td>아이디 찾기</td>
+			<td></td>
+			<td></td>
+			<td><a href="LOG/html/LOG0300.html" target="_blank">LOG0300.html</a></td>
+			<td class="date">03-12</td>
+			<td class="date"></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><em class="num"></em></td>
+			<td></td>
+			<td>비밀번호 찾기</td>
+			<td></td>
+			<td></td>
+			<td><a href="LOG/html/LOG0400.html" target="_blank">LOG0400.html</a></td>
+			<td class="date">03-12</td>
+			<td class="date"></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><em class="num"></em></td>
+			<td></td>
+			<td></td>
+			<td>비밀번호 재설정</td>
+			<td></td>
+			<td><a href="LOG/html/LOG0410.html" target="_blank">LOG0410.html</a></td>
+			<td class="date">03-12</td>
+			<td class="date"></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><em class="num"></em></td>
+			<td></td>
+			<td></td>
+			<td>비밀번호 변경</td>
+			<td></td>
+			<td><a href="LOG/html/LOG0420.html" target="_blank">LOG0420.html</a></td>
+			<td class="date">03-12</td>
+			<td class="date"></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><em class="num"></em></td>
+			<td></td>
+			<td>외부연동</td>
+			<td>구글 연동</td>
+			<td></td>
+			<td><a href="LOG/html/LOG1000.html" target="_blank">LOG1000.html</a></td>
+			<td class="date">03-12</td>
+			<td class="date"></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><em class="num"></em></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>회원가입 완료</td>
+			<td><a href="LOG/html/LOG1010.html" target="_blank">LOG1010.html</a></td>
+			<td class="date">03-12</td>
+			<td class="date"></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><em class="num"></em></td>
+			<td></td>
+			<td></td>
+			<td>카카오 연동</td>
+			<td></td>
+			<td><a href="LOG/html/LOG1100.html" target="_blank">LOG1100.html</a></td>
+			<td class="date">03-12</td>
+			<td class="date"></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><em class="num"></em></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>회원가입 완료</td>
+			<td><a href="LOG/html/LOG1110.html" target="_blank">LOG1110.html</a></td>
+			<td class="date">03-12</td>
+			<td class="date"></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><em class="num"></em></td>
+			<td></td>
+			<td></td>
+			<td>Apple 연동</td>
+			<td></td>
+			<td><a href="LOG/html/LOG1200.html" target="_blank">LOG1200.html</a></td>
+			<td class="date">03-12</td>
+			<td class="date"></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><em class="num"></em></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>회원가입 완료</td>
+			<td><a href="LOG/html/LOG1210.html" target="_blank">LOG1210.html</a></td>
+			<td class="date">03-12</td>
+			<td class="date"></td>
+			<td></td>
+		</tr>
+		
+		
+		</tbody>
+	</table>
+
+</div>
+</body>
+</html>

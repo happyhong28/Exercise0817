@@ -1,17 +1,22 @@
 package com.example.exercise0817;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.exercise0817.databinding.ActivityMapsBinding;
+import com.google.firebase.auth.FirebaseAuth;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,12 +28,17 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private ActivityMapsBinding binding;
-    private String jsonString;
+    public double[] logtArray, latArray;
+    public String[] nmArray, zipArray, roadnmArray;
+    //public String[][] infoArray;
+
+    private long backBtnTime = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,80 +48,140 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         setContentView(binding.getRoot());
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
 
         String json = "";
         try {
-            InputStream is = getAssets().open("data.json"); // json파일 이름
+            InputStream is = getAssets().open("data.json");
             int fileSize = is.available();
 
             byte[] buffer = new byte[fileSize];
             is.read(buffer);
             is.close();
 
-            //json파일명을 가져와서 String 변수에 담음
             json = new String(buffer, "UTF-8");
-            //Log.d("--  json = ", json);
-
+            //Log.w("--- json --- ", json);
 
             JSONObject jsonObject = new JSONObject(json);
+            JSONArray D = jsonObject.getJSONArray("Ducklbrd");
+            JSONObject ob = D.getJSONObject(1);
+            JSONArray arr = ob.getJSONArray("row");
 
-            //배열로된 자료를 가져올때
-            JSONArray Array = jsonObject.getJSONArray("Ducklbrd");//배열의 이름
-            JSONObject Object = Array.getJSONObject(1);
-
-            for(int i=0; i<Array.length(); i++)
-            {
-
-          /*      JSONObject Object = Array.getJSONObject(i);*/
-                Log.d("-- 위도 ", Object.getString("REFINE_WGS84_LOGT"));
-                Log.d("-- 경도 ", Object.getString("REFINE_WGS84_LAT"));
+            nmArray = new String[arr.length()];
+            zipArray = new String[arr.length()];
+            logtArray = new double[arr.length()];
+            latArray = new double[arr.length()];
+            roadnmArray = new String[arr.length()];
+            //infoArray = new String[arr.length()][5];
 
 
-                String structured_formatting = Object.getString("row");
-                Log.d("--  json = ", structured_formatting);
-                JSONObject Object2 = Object.getJSONObject(structured_formatting);
-                String logt = Object2.getString("REFINE_WGS84_LOGT");
-                String lat = Object2.getString("REFINE_WGS84_LAT");
+            for (int i = 0; i < arr.length(); i++) {
+                JSONObject ob2 = arr.getJSONObject(i);
 
-                Log.d("-- 위도 ",logt);
-                Log.d("-- 위도 ",lat);
-                // 위도 Latitude, 경도 longitude
+                logtArray[i] = ob2.getDouble("REFINE_WGS84_LOGT");
+                latArray[i] = ob2.getDouble("REFINE_WGS84_LAT");
+                nmArray[i] = ob2.getString("BIZPLC_NM");
+                zipArray[i] = ob2.getString("REFINE_ZIP_CD");
+                roadnmArray[i] = ob2.getString("REFINE_ROADNM_ADDR");
+
+
             }
 
-        } catch (IOException ex) {
+
+        } catch (IOException | JSONException ex) {
             ex.printStackTrace();
-        } catch (JSONException e) {
-            e.printStackTrace();
         }
 
 
-    }
+    }//oncreate
 
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
+
+    void handleSendText(Intent intent) {
+        String sharedText1 = intent.getStringExtra(Intent.EXTRA_TEXT);
+        if (sharedText1 != null) {
+            Log.w("", sharedText1);
+            String[] splitText1 = sharedText1.split("#");
+
+            int getmarkerId = Integer.parseInt(splitText1[0]);
+            Log.w("",String.valueOf(getmarkerId));
+            latArray[getmarkerId] = Double.parseDouble(splitText1[1]);
+            logtArray[getmarkerId] = Double.parseDouble(splitText1[2]);
+        }
+    }//
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        // Get intent, action and MIME type
+        Intent intent = getIntent();
+        String action = intent.getAction();
+        String type = intent.getType();
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        // 화면(인텐트)가 B앱에서 넘어온 여부를 확인해서
+        // 넘어온 상태이면 handlesendtext() 를 통해
+        // 수정된 값으로 핀을 뿌려주고 그게 아니라면 원래 json에서 읽어온 정보로 핀으로 뿌리라는 의미
+        if (Intent.ACTION_SEND.equals(action) && type != null) {
+            if ("text/plain".equals(type)) {
+                handleSendText(intent); // Handle text being sent
+            } else {
+            }
+        }
+
+        for (int i = 0; i < nmArray.length; i++) {
+            LatLng korea = new LatLng(latArray[i], logtArray[i]);
+            Marker marker = mMap.addMarker(new MarkerOptions()
+                    .position(korea)
+                    .title(nmArray[i])
+                    .snippet("상세정보를 확인하려면 마커를 클릭해주세요!")
+
+            );
+            marker.showInfoWindow();
+
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(korea));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(korea, 13));
+        }
+
+        //클릭시 상세화면 이동
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(@NonNull Marker marker) {
+
+                int markerId = Integer.parseInt((marker.getId().substring(1)));
+
+                Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
+                intent.putExtra("markerId", markerId);
+                intent.putExtra("logtArray", logtArray[markerId]);
+                intent.putExtra("latArray", latArray[markerId]);
+                intent.putExtra("nmArray", nmArray[markerId]);
+                intent.putExtra("roadnmArray", roadnmArray[markerId]);
+                intent.putExtra("zipArray", zipArray[markerId]);
+                startActivity(intent);
+                return false;
+            }
+
+        });//
+
+    }//onmapready
+
+
+    @Override
+    public void onBackPressed() {
+
+        long curTime = System.currentTimeMillis();
+        long gapTime = curTime - backBtnTime;
+
+        if (0 <= gapTime && 2000 >= gapTime) {
+            FirebaseAuth.getInstance().signOut();
+            Toast.makeText(MapsActivity.this, "로그아웃", Toast.LENGTH_SHORT).show();
+            finish();
+//            Intent intent1 = new Intent(getApplicationContext(), MainActivity.class);
+//            startActivity(intent1);
+//            super.onBackPressed();
+
+        } else {
+            backBtnTime = curTime;
+            Toast.makeText(this, "한번 더 누르면 로그아웃됩니다.", Toast.LENGTH_SHORT).show();
+        }
     }
-
-
-
-
-
 }

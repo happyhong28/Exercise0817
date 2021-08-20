@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fbe400">
+    android:background="#FFFFFF">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -13,8 +13,9 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
+        android:background="#FFFFFF"
         android:contentDescription="TODO"
-        android:src="@drawable/kakaologo"
+        android:src="@drawable/eightball"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -28,7 +29,7 @@
         android:background="@drawable/white"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
-        android:hint="카카오계정"
+        android:hint="이메일"
         android:includeFontPadding="true"
         android:inputType="textPersonName"
         android:minHeight="48dp"
@@ -43,7 +44,6 @@
         android:id="@+id/et_SigninPw"
         android:layout_width="230dp"
         android:layout_height="48dp"
-        android:paddingLeft="10dp"
         android:layout_centerHorizontal="true"
         android:width="210dp"
         android:background="@drawable/white"
@@ -51,6 +51,7 @@
         android:hint="비밀번호"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:paddingLeft="10dp"
         android:textColor="#C5BEBE"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/et_SigninEmail"
@@ -64,7 +65,7 @@
         android:layout_alignStart="@+id/et_SigninPw"
         android:layout_alignEnd="@+id/et_SigninPw"
         android:layout_marginTop="8dp"
-        android:backgroundTint="#271111"
+        android:backgroundTint="#000000"
         android:text="로그인"
         android:textColor="#C5BEBE"
         app:layout_constraintEnd_toEndOf="@+id/et_SigninPw"
@@ -81,7 +82,7 @@
         android:foregroundTint="#00FFFFFF"
         android:shadowColor="#00FFFFFF"
         android:text="회원가입"
-        android:textColor="#271111"
+        android:textColor="#000000"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/btn_Signin"
         app:layout_constraintStart_toStartOf="@+id/btn_Signin"

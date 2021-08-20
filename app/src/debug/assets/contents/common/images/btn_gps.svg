@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="62" height="62" viewBox="0 0 62 62">
+  <defs>
+    <filter id="사각형_1986" x="0" y="0" width="62" height="62" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="그룹_4969" data-name="그룹 4969" transform="translate(-1 -505)">
+    <g transform="matrix(1, 0, 0, 1, 1, 505)" filter="url(#사각형_1986)">
+      <rect id="사각형_1986-2" data-name="사각형 1986" width="44" height="44" rx="5" transform="translate(9 9)" fill="#fff"/>
+    </g>
+    <g id="그룹_4968" data-name="그룹 4968" transform="translate(6 -8)">
+      <g id="타원_732" data-name="타원 732" transform="translate(16 534)" fill="#fff" stroke="#5d89b3" stroke-width="1">
+        <circle cx="10" cy="10" r="10" stroke="none"/>
+        <circle cx="10" cy="10" r="9.5" fill="none"/>
+      </g>
+      <g id="타원_733" data-name="타원 733" transform="translate(24 542)" fill="#fff" stroke="#5d89b3" stroke-width="1">
+        <circle cx="2" cy="2" r="2" stroke="none"/>
+        <circle cx="2" cy="2" r="1.5" fill="none"/>
+      </g>
+      <g id="사각형_1987" data-name="사각형 1987" transform="translate(32 543.5)" fill="#5d89b3" stroke="#5d89b3" stroke-width="1">
+        <rect width="3" height="1" stroke="none"/>
+        <rect x="0.5" y="0.5" width="2" fill="none"/>
+      </g>
+      <g id="사각형_1990" data-name="사각형 1990" transform="translate(26.5 550) rotate(90)" fill="#5d89b3" stroke="#5d89b3" stroke-width="1">
+        <rect width="3" height="1" stroke="none"/>
+        <rect x="0.5" y="0.5" width="2" fill="none"/>
+      </g>
+      <g id="사각형_1988" data-name="사각형 1988" transform="translate(17 543.5)" fill="#5d89b3" stroke="#5d89b3" stroke-width="1">
+        <rect width="3" height="1" stroke="none"/>
+        <rect x="0.5" y="0.5" width="2" fill="none"/>
+      </g>
+      <g id="사각형_1989" data-name="사각형 1989" transform="translate(26.5 535) rotate(90)" fill="#5d89b3" stroke="#5d89b3" stroke-width="1">
+        <rect width="3" height="1" stroke="none"/>
+        <rect x="0.5" y="0.5" width="2" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

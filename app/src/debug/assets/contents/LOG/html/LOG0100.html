@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="-1">
+	<meta name="format-detection" content="telephone=no" />
+	<script type="text/javascript" src="../../common/js/jquery-2.1.4.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="../../common/css/common.css" />
+	<title>HDC 아이콘트롤스 Mobile Application​</title>
+	
+	<script type="text/javascript">
+    $(function() {
+		// input focused : label interaction
+		$(".inp_box input").focus(function() {
+			$(this).parents(".inp_box").addClass("focus");
+		});
+		$(".inp_box input").blur(function() {
+			var value = $(this).val();
+			if( value == "" ) {
+				$(this).parents(".inp_box").removeClass("focus");
+			} else {
+				$(this).parents(".inp_box").addClass("focus");
+			}
+		});
+		
+		// password show text
+		$(".btn_text_view").click(function() {
+			$(this).toggleClass("on");
+		});
+
+		$(".btn_login").click(function() {
+			window.JSBridge.login($("#id").val(), $("#pw").val());
+		});
+	});
+	</script>
+
+
+
+
+</head>
+<body>
+<div class="subWrap01 loginWrap">
+	<header>
+        <h1>BESTIN</h1>
+    </header>
+
+    <fieldset>
+        <legend>Login</legend>
+
+        <!-- input wrapper -->
+        <div class="inp_box">
+            <div class="inp">
+                <input type="text" id="id" placeholder="아이디(이메일)" />
+                <button type="button" class="btn_text_del"><span>delete input text</span></button>
+            </div>
+        </div>
+        <!-- //input wrapper -->
+        <!-- input wrapper -->
+        <div class="inp_box password">
+            <div class="inp">
+                <input type="password" id="pw" placeholder="비밀번호" />
+                <button type="button" class="btn_text_view"><span>show input text</span></button>
+                <button type="button" class="btn_text_del"><span>delete input text</span></button>
+            </div>
+        </div>
+        <!-- //input wrapper -->
+
+        <div class="c_btn"><button type="button" class="btn_login"><span>로그인</span></button></div>
+
+        <div class="log_option">
+            <label><input type="checkbox" id="" name="" /><span>아이디 저장</span></label>
+            <label><input type="checkbox" id="" name="" /><span>자동 로그인</span></label>
+        </div>
+
+        <div class="login_menu">
+            <button type="button"><span>아이디 찾기</span></button>
+            <button type="button"><span>비밀번호 찾기</span></button>
+        </div>
+    </fieldset>
+
+    <!-- sns login -->
+    <div class="other_login">
+        <ul>
+            <li><button type="button" class="btn_google"><span>GOOGLE 로그인</span></button></li>
+            <li><button type="button" class="btn_kakao"><span>카카오 로그인</span></button></li>
+            <li><button type="button" class="btn_apple"><span>APPLE 로그인</span></button></li>
+            <li><button type="button" class="btn_join"><span>회원가입</span></button></li>
+        </ul>
+    </div>
+    <!-- //sns login -->
+</div>
+
+<!-- popup area -->
+<div class="modalWrap none" id="wrapAlert">
+    <!-- popup box -->
+    <article class="popWrap alert02">
+        <!-- popup contents -->
+        <div class="pop_cont">
+            <p class="alertContent">비밀번호 변경으로 <br />소중한 개인정보를 지키세요</p>
+            <p>소중한 개인정보를 보호하고 <br/>계정도용을 예방하기 위해 <br />3개월 주기로 비밀번호를 <br />변경해주세요</p>
+
+            <div class="chk_area01">
+                <label><input type="checkbox" id="" name="" /><span>3개월간 보지 않기</span></label>
+            </div>
+        </div>
+        <!-- //popup contents -->
+
+        <!-- popup footer -->
+        <footer class="pop_foot">
+            <button type="button" class="alertButton1"><span>확인</span></button>
+        </footer>
+        <!-- //popup footer -->
+    </article>
+    <article class="popWrap alert01 none" id="alert">
+        <!-- popup contents -->
+        <div class="pop_cont">
+            <p class="alertContent"></p>
+        </div>
+        <!-- //popup contents -->
+
+        <!-- popup footer -->
+        <footer class="pop_foot">
+            <button type="button" class="alertButton1"><span>확인</span></button>
+        </footer>
+        <!-- //popup footer -->
+    </article>
+    <!-- //popup box -->
+
+    <!-- popup box -->
+    <article class="popWrap dimmed none" id="alertT">
+        <!-- popup header -->
+        <header class="pop_head">
+            <h1 class="pop_tit alertTitle"></h1>
+        </header>
+        <!-- //popup header -->
+
+        <!-- popup contents -->
+        <div class="pop_cont">
+            <p class="alertContent"></p>
+        </div>
+        <!-- //popup contents -->
+
+        <!-- popup footer -->
+        <footer class="pop_foot">
+            <button type="button" class="alertButton1"><span>확인</span></button>
+        </footer>
+        <!-- //popup footer -->
+    </article>
+    <!-- //popup box -->
+
+    <!-- popup box -->
+    <article class="popWrap alert02 none" id="alertI">
+        <!-- popup contents -->
+        <div class="pop_cont">
+            <p class="alertContent"></p>
+        </div>
+        <!-- //popup contents -->
+
+        <!-- popup footer -->
+        <footer class="pop_foot">
+            <button type="button" class="alertButton1"><span>확인</span></button>
+        </footer>
+        <!-- //popup footer -->
+    </article>
+    <!-- //popup box -->
+</div>
+<!-- //popup area -->
+</body>
+
+</html>
