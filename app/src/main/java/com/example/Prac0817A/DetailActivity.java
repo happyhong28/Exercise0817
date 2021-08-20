@@ -1,4 +1,4 @@
-package com.example.exercise0817;
+package com.example.Prac0817A;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,9 +8,6 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 public class DetailActivity extends AppCompatActivity {
 

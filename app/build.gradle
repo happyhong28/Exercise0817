@@ -8,7 +8,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.example.exercise0817"
+        applicationId "com.example.Prac0817A"
         minSdk 23
         targetSdk 31
         versionCode 1

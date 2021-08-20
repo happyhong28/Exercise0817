@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.exercise0817">
+    package="com.example.Prac0817A">
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -40,7 +40,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MapsActivity"
+            android:name="com.example.Prac0817A.MapsActivity"
             android:exported="true"
             android:label="@string/title_activity_maps" >
             <intent-filter>
@@ -64,7 +64,7 @@
             android:value="xcx3jda9cm" />
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.Prac0817A.MainActivity"
             android:exported="true"
             android:largeHeap ="true">
             <intent-filter>
@@ -73,9 +73,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".SignUpActivity" />
+        <activity android:name="com.example.Prac0817A.SignUpActivity" />
 
-        <activity android:name=".DetailActivity"
+        <activity android:name="com.example.Prac0817A.DetailActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
@@ -85,7 +85,7 @@
         </activity>
 
         <activity
-            android:name=".LoginActivity"
+            android:name="com.example.Prac0817A.LoginActivity"
             android:exported="true"
             android:largeHeap ="true">
             <intent-filter>

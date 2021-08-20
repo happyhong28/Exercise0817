@@ -1,4 +1,4 @@
-package com.example.exercise0817;
+package com.example.Prac0817A;
 
 import org.junit.Test;
 
