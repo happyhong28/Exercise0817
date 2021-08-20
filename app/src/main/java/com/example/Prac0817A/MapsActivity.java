@@ -169,7 +169,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         if (0 <= gapTime && 2000 >= gapTime) {
             FirebaseAuth.getInstance().signOut();
-            Toast.makeText(MapsActivity.this, "로그아웃", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(MapsActivity.this, "앱을 종료합니다.", Toast.LENGTH_SHORT).show();
             finish();
 //            Intent intent1 = new Intent(getApplicationContext(), MainActivity.class);
 //            startActivity(intent1);
@@ -177,7 +177,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         } else {
             backBtnTime = curTime;
-            Toast.makeText(this, "한번 더 누르면 로그아웃됩니다.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "한번 더 누르면 앱이 종료됩니다.", Toast.LENGTH_SHORT).show();
         }
     }
 }
